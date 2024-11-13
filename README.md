@@ -15,3 +15,12 @@ Garbage Dataset
 3. Run analyze_garbage_data.py to analyse the proccessed and trained data.
 4. Please check model folder for the trained CNN model.
 5. Once this is run please check the results folder for classification of garbage based on category.
+
+======================================================
+
+Climate Dataset
+
+1. Uploaded the dataset folder under climate analysis
+2. Run preprocess_climate_data.py to process the data based on avergae temperature
+3. Run analyze_climate_dat.py to analyse the processed data 
+4. once run please check the results folder for both processed as well as analysed data in csv.
