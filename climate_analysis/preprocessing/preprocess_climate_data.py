@@ -13,6 +13,11 @@ def preprocess_climate_data():
     
     df_yearly['NormalizedTemperature'] = (df_yearly['AverageTemperature'] - df_yearly['AverageTemperature'].min()) / \
                                           (df_yearly['AverageTemperature'].max() - df_yearly['AverageTemperature'].min())
+    
+    os.makedirs('../results', exist_ok=True)
+    output_file = '../results/preprocessed_climate_data.csv'
+    df_yearly.to_csv(output_file, index=False)
+    print(f"Preprocessed data saved to {output_file}")
 
 
 if __name__ == "__main__":
