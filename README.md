@@ -12,5 +12,6 @@ Garbage Dataset
 
 1. Uploaded the dataset folder under garbage classification
 2. Run preprocess_garbage_data.py to process and train the data first
-3. Please check model folder for the trained CNN model.
-4. Once this is run please check the results folder for classification of garbage based on category.
+3. Run analyze_garbage_data.py to analyse the proccessed and trained data.
+4. Please check model folder for the trained CNN model.
+5. Once this is run please check the results folder for classification of garbage based on category.
