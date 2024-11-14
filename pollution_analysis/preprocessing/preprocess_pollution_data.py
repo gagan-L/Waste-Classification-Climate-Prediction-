@@ -19,6 +19,21 @@ def preprocess_pollution_data():
                       'composition_paper_cardboard_percent', 
                       'composition_plastic_percent']]
     
+    # Rename columns for clarity
+    df_filtered.columns = [
+        'CountryName', 
+        'TotalWasteGenerated', 
+        'OrganicWastePercent', 
+        'GlassWastePercent', 
+        'MetalWastePercent', 
+        'PaperWastePercent', 
+        'PlasticWastePercent'
+    ]
+    
+    # Drop rows with missing values
+    df_filtered.dropna(inplace=True)
+    
+    # Normalize the TotalWasteGenerated column
     df_filtered['TotalWasteGenerated'] = df_filtered['TotalWasteGenerated'] / df_filtered['TotalWasteGenerated'].max()
     
     # Convert waste composition percentages to decimal format
