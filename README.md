@@ -24,3 +24,5 @@ Climate Dataset
 2. Run preprocess_climate_data.py to process the data based on avergae temperature
 3. Run analyze_climate_dat.py to analyse the processed data 
 4. once run please check the results folder for both processed as well as analysed data in csv.
+5. As updated now once we run the analysis_climate.py we see a visual representation of plot using climate average temperature of countries we mention. 
+6. Analysed data will be gereated in a csv file in rsults folder inside climate_analysis.
