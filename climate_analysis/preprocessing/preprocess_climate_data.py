@@ -22,3 +22,4 @@ def preprocess_climate_data():
 
 if __name__ == "__main__":
     preprocess_climate_data()
+#ki
