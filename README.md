@@ -126,7 +126,7 @@ Machine Learning for Environmental Sustainability: Waste Classification and Clim
 
 * Week 1: Project selection and suitable dataset for the project.
 * Week 2: third Dataset selection after project pitch and initial preprocessing.
-* Week 3: Created GitHub respository and eaxh member forked from main branch to start deploying.
+* Week 3: Created GitHub respository and each member forked from main branch to start deploying.
 * Week 4: Analysis of flow of the project to follow.
 * Week 5: Model training of each section which has been divided to each group members.
 * Week 6: Git commit to combine each section development to form a final project.
@@ -146,12 +146,6 @@ Machine Learning for Environmental Sustainability: Waste Classification and Clim
 
 
 # Waste-Classification-Climate-Prediction-
-
-1. Garbage Dataset 
-2. run Preprocessing_and _train.py to traing the model using CNN
-3. Once completed run visulization.py to visualize the chart 
-4. run app.py wherein we have a local server running and images can be uploaded to clasify based on garbage type.
-5. Come back and check logs.
 
 =====================================================
 
@@ -253,3 +247,26 @@ Cluster	Characteristics	Example Countries
 0	High OrganicWastePercent	Bangladesh, India
 1	High PlasticWastePercent	USA, Australia
 Silhouette Score: 0.74
+
+**R4. Baseline Training and Evaluation Experiments
+Three machine learning algorithms—Decision Trees, k-Nearest Neighbours (k-NN), and Linear Regression—were used. Regression was employed for predicting OrganicWastePercent, and classification models were applied to the garbage dataset. The decision tree's feature importance provided practical applications in waste decomposition prediction.
+Repository Location: Baseline Models
+Model Inputs: AverageTemperature, PlasticWastePercent, GlassWastePercent.
+Model Outputs: OrganicWastePercent (regression), garbage categories (classification).
+Results Table:
+Model	Metric	Value
+Decision Tree	R² (Regression)	0.78
+Linear Regression	R² (Regression)	0.73
+k-NN Classifier	Accuracy	88%
+Visualization: Scatter plots for regression predictions and confusion matrices for classification.
+
+**R5. Neural Networks
+A Convolutional Neural Network (CNN) was trained on the garbage dataset for multi-class classification, achieving 90% accuracy. A Multi-Layer Perceptron (MLP) was applied to the combined dataset for regression tasks, predicting OrganicWastePercent with improved accuracy. Performance was compared to baseline models.
+Repository Location: Neural Network Models
+Model Inputs: Image data for CNN, normalized features for MLP.
+Model Outputs: Predicted garbage categories (CNN) and OrganicWastePercent (MLP).
+Results Table:
+Model	Metric	Value
+CNN	Accuracy	90%
+MLP	R² (Regression)	0.81
+Visualization: Accuracy trends across epochs and scatter plots for predictions.
