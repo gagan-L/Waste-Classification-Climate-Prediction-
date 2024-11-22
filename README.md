@@ -96,25 +96,25 @@ Machine Learning for Environmental Sustainability: Waste Classification and Clim
 
 >> Running the Application
 
-> Our Project have 3 Datasets each dataset is plased in the repective folders.
+> Our Project have 3 Datasets each dataset is placed in the respective folders.
 
  > Garbage Classification
    1. Run Preprocess_garbage_data.py to train the CNN model.
    2. Run train_garbage_model.py to train the model after preprocessing.
    3. Run analyze_garbage_data.py by taking the results from trained model
-   4. Results will be stored in the ressults folder
+   4. Results will be stored in the results folder
 
  > Climate Data Analysis
    1. Run preprocess_climate_data.py to prepare data.
    2. Execute analyze_climate_data.py to visualize results.
-   3. Results will be stored in the ressults folder
+   3. Results will be stored in the results folder
  
  > Pollution Data Analysis
    1. Run preprocess_pollution_data.py to process the data.
    2. Execute analyze_pollution_data.py to get the results in .csv format
 
  > Combined Analysis
-   1. Run combined_analysis.py collecting all the results from other analysis to get merged climate pollution data.
+   1. Run combined_analysis.py collecting the results from all the analysis to get merged climate pollution data.
    2. Execute waste_prediction.py to get visual chart of actual vs predicted organic waste.
   
  > Additionals
@@ -124,9 +124,15 @@ Machine Learning for Environmental Sustainability: Waste Classification and Clim
 
 >> Weekly Updates
 
-* Week 1: Data collected, GitHub set up.
-* Week 2: Data preprocessing completed.
-* Week 3: Model training underway, challenges with overfitting addressed.
+* Week 1: Project selection and suitable dataset for the project.
+* Week 2: third Dataset selection after project pitch and initial preprocessing.
+* Week 3: Created GitHub respository and eaxh member forked from main branch to start deploying.
+* Week 4: Analysis of flow of the project to follow.
+* Week 5: Model training of each section which has been divided to each group members.
+* Week 6: Git commit to combine each section development to form a final project.
+* Week 7: Overcoming all the git commit conflicts and making changes for the same.
+* Week 8: structure changes for the code as described in the rubic of the project description and making report for the project.
+* Week 9: Improvising the overal code and Read me file.
 
 >> Formatting and Documentation
 
