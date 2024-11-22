@@ -1,38 +1,67 @@
 import os
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-def preprocess_garbage_data():
-    # Directory where the images are stored
-    dataset_dir = '../dataset'
-    
-    # Set up data generator for image augmentation
-    datagen = ImageDataGenerator(
-        rescale=1./255,        # Normalize pixel values to [0, 1]
-        rotation_range=20,     # Randomly rotate images
-        width_shift_range=0.1, # Randomly shift images horizontally
-        height_shift_range=0.1, # Randomly shift images vertically
-        shear_range=0.2,       # Shear transformation
-        zoom_range=0.2,        # Random zoom
-        horizontal_flip=True,  # Randomly flip images horizontally
-        fill_mode='nearest'
+def create_image_data_generator():
+    """
+    Creates an instance of ImageDataGenerator with predefined augmentations.
+    """
+    return ImageDataGenerator(
+        rescale=1.0 / 255,       
+        rotation_range=20,       
+        width_shift_range=0.1,   
+        height_shift_range=0.1,  
+        shear_range=0.2,         
+        zoom_range=0.2,          
+        horizontal_flip=True,    
+        fill_mode="nearest"      
     )
+
+def load_training_data(dataset_dir, target_size=(128, 128), batch_size=32):
+    """
+    Loads and augments training data from the specified directory.
     
-    # Prepare training data using flow_from_directory
-    train_data = datagen.flow_from_directory(
+    Args:
+        dataset_dir (str): Path to the dataset directory.
+        target_size (tuple): Target size for resizing images.
+        batch_size (int): Batch size for data generator.
+    
+    Returns:
+        DirectoryIterator: The augmented training data.
+    """
+    datagen = create_image_data_generator()
+    return datagen.flow_from_directory(
         dataset_dir,
-        target_size=(128, 128),  # Resize images to 128x128
-        batch_size=32,
-        class_mode='categorical',  # Multiclass classification
+        target_size=target_size,
+        batch_size=batch_size,
+        class_mode="categorical",
         shuffle=True
     )
-    
-    # Save class indices for reference
-    labels_path = '../results/classification_labels.csv'
-    os.makedirs('../results', exist_ok=True)
-    with open(labels_path, 'w') as f:
-        for label, index in train_data.class_indices.items():
-            f.write(f"{label},{index}\n")
+
+def save_class_labels(class_indices, labels_path):
+    """
+    Saves the class labels to a CSV file.
+
+    Args:
+        class_indices (dict): Dictionary mapping class labels to indices.
+        labels_path (str): Path to save the labels CSV file.
+    """
+    os.makedirs(os.path.dirname(labels_path), exist_ok=True)
+    with open(labels_path, "w") as f:
+        f.writelines(f"{label},{index}\n" for label, index in class_indices.items())
     print(f"Labels saved to {labels_path}")
+
+def preprocess_garbage_data():
+    """
+    Preprocess the garbage dataset, augment images, and save class labels.
+
+    Returns:
+        DirectoryIterator: The augmented training data.
+    """
+    dataset_dir = os.path.abspath("../dataset")
+    labels_path = os.path.abspath("../results/classification_labels.csv")
+
+    train_data = load_training_data(dataset_dir)
+    save_class_labels(train_data.class_indices, labels_path)
 
     return train_data
 
