@@ -12,59 +12,87 @@ Kiran Narayana (H00461871)
 Neha Giliyar Nagaraj (H00461957)
 Sanjana Koujalgi (H00462014)
 
-> Research Objectives
+>> Research Objectives
 
 * Classify waste images into various categories using machine learning algorithms.
 * Predict the impact of climate on organic waste decomposition.
 * Analyze waste composition and climate data to develop sustainable waste management insights.
 
-> Project Milestones
+>> Project Milestones
 
 * Week 1-2: Set up the GitHub repository, collect datasets, perform initial data preprocessing.
 * Week 3-4: Train machine learning models (CNN for waste classification, Linear Regression for climate prediction).
 * Week 5-6: Visualize the results, validate model performance, update README with results and milestones.
 
-> Dataset Sources
+>> Dataset Sources
 
 * Garbage Classification Dataset: UNEP Waste Management Resources.
 * Climate Dataset: Historical climate data for various countries, source: Kaggle Climate Data Repository.
 * Pollution Dataset: Waste composition data for various countries, sourced from open data repositories.
 
-> How to Run the Data Preparation Pipeline
+>> How to Run the Data Preparation Pipeline
 
 * Garbage Dataset:
   1. Upload the dataset folder under garbage_classification.
   2. Run preprocess_garbage_data.py to process and train the data.
   3. Analyze processed data with analyze_garbage_data.py. Trained models will be available in the model folder.
 
-> Climate Dataset:
+>> Climate Dataset:
   1. Upload the dataset folder under climate_analysis.
   2. Run preprocess_climate_data.py to process data.
   3. Visualize processed data using analyze_climate_data.py. Results will be stored in the results folder.
 
-> Application Setup:
+>> Application Setup:
   1. Run app.py to start a local server for garbage image classification.
 
-> Project Deliverables
+>> Project Deliverables
 
-  * Garbage Classification using CNN: The model uses a convolutional neural network to classify images into 12 categories (e.g., plastic, organic, glass). Source Code.
-
+  * Garbage Classification using CNN: The model uses a convolutional neural network to classify images into 12 categories (e.g., plastic, 
+    organic, glass). Source Code.
   * Climate Prediction using Linear Regression: Predict organic waste levels based on climate data. Source Code.
 
-GitHub Repository Structure
+>> GitHub Repository Structure
 
-data/: Contains datasets used for training and analysis.
+  ->additionals
+    |_app.py
+    |_preprocess_and_train.py
+    |_visualization.py
+    |_visualize_log.py
+    
+  ->climate_analysis
+     |->analysis
+       |_analyze_climate_data.py  
+     |->dataset
+       |_climate_data.csv 
+     |->preprocessing
+       |_preprocess_climate_data.py
+  
+  ->combined_analysis
+    |->analysis
+      |_combined_analysis.py
+      |_waste_prediction.py
+    |->scripts
+      |_combined_analysis.py
 
-notebooks/: Jupyter notebooks for data analysis and modelling.
+  ->garbage_classification
+    |->analysis
+       |_analyze_garbage_data.py
+    |->dataset (images dataset)
+    |->models
+       |_train_garbage_model.py
+    |->preprocessing
+       |_preprocess_garbage_data.py
 
-scripts/: Python scripts for data preprocessing, model training, and evaluation.
+   ->pollution_analysis
+     |->analysis
+        |_analyze_pollution_data.py
+     |->dataset
+        |_pollution_data.csv
+     |->preprocessing
+        |_preprocess_pollution_data.py
 
-documentation/: Project documentation and weekly updates.
-
-week1/, week2/, etc.: Detailed weekly progress.
-
-README.md: Project overview and data pipeline description.
-
+   * README.md: Project overview and data pipeline description.
+    
 
 >> Running the Application
 
