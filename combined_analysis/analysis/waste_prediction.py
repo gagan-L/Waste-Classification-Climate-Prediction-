@@ -1,82 +1,66 @@
-""" waste_prediction.py """
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import matplotlib.pyplot as plt
 
+def load_data(filepath):
+    """ Load the merged data from a CSV file """
+    return pd.read_csv(filepath)
 
-def load_data():
-    """ Load the merged data from CSV (ensure this file exists in the specified path) """
-    data = pd.read_csv('combined_analysis/results/merged_climate_pollution_data.csv')
-    return data
-
-""" Preprocess data: to select relevant features and target and to handle missing values """
-def preprocess_data(data):
-    """" electing features based on the correlation analysis and domain knowledge """
-    features = ['AverageTemperature', 'PlasticWastePercent', 'GlassWastePercent']
-    target = 'OrganicWastePercent'
-    
-    """ Drop rows with missing values in the selected columns """
+def preprocess_data(data, features, target):
+    """ Preprocess data by selecting features and the target, and handle missing values """
     data = data[features + [target]].dropna()
-    
     X = data[features]
     y = data[target]
-    
     return X, y
 
-""" Split data into training and testing sets """
-def split_data(X, y):
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    return X_train, X_test, y_train, y_test
+def split_data(X, y, test_size=0.2, random_state=42):
+    """ Split data into training and testing sets """
+    return train_test_split(X, y, test_size=test_size, random_state=random_state)
 
-""" Train a linear regression model """
 def train_model(X_train, y_train):
+    """ Train a linear regression model """
     model = LinearRegression()
     model.fit(X_train, y_train)
     return model
 
-""" Evaluate model performance """
 def evaluate_model(model, X_test, y_test):
+    """ Evaluate model performance and print errors """
     y_pred = model.predict(X_test)
-    
     mae = mean_absolute_error(y_test, y_pred)
     mse = mean_squared_error(y_test, y_pred)
-    
     print(f"Mean Absolute Error: {mae}")
     print(f"Mean Squared Error: {mse}")
-    
     return y_pred
 
-""" Plot actual vs predicted values """
 def plot_results(y_test, y_pred):
+    """ Plot actual vs predicted values """
     plt.figure(figsize=(10, 6))
     plt.scatter(y_test, y_pred, alpha=0.6)
-    plt.xlabel("Actual OrganicWastePercent")
-    plt.ylabel("Predicted OrganicWastePercent")
-    plt.title("Actual vs Predicted OrganicWastePercent")
+    plt.xlabel("Actual Organic Waste Percent")
+    plt.ylabel("Predicted Organic Waste Percent")
+    plt.title("Actual vs Predicted Organic Waste Percent")
     plt.show()
 
-""" Main pipeline execution """
-if __name__ == "__main__":
-    """ Load and preprocess data """
+def main():
     print("Loading and preprocessing data...")
-    data = load_data()
-    X, y = preprocess_data(data)
+    data = load_data('combined_analysis/results/merged_climate_pollution_data.csv')
+    features = ['AverageTemperature', 'PlasticWastePercent', 'GlassWastePercent']
+    target = 'OrganicWastePercent'
+    X, y = preprocess_data(data, features, target)
     
-    #Split data
     print("Splitting data into training and testing sets...")
     X_train, X_test, y_train, y_test = split_data(X, y)
     
-    #Train the model
     print("Training the model...")
     model = train_model(X_train, y_train)
     
-    #Evaluate the model
     print("Evaluating the model...")
     y_pred = evaluate_model(model, X_test, y_test)
     
-    #Plot results
     print("Plotting the results...")
     plot_results(y_test, y_pred)
+
+if __name__ == "__main__":
+    main()
