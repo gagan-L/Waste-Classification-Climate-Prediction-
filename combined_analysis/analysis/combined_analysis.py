@@ -9,9 +9,9 @@ from sklearn.metrics import mean_squared_error, r2_score
 # Load datasets
 def load_datasets():
     print("Loading datasets...")
-    garbage_data = pd.read_csv('../../garbage_classification/results/predictions.csv')
-    climate_data = pd.read_csv('../../climate_analysis/results/preprocessed_climate_data.csv')
-    pollution_data = pd.read_csv('../../pollution_analysis/results/preprocessed_pollution_data.csv')
+    garbage_data = pd.read_csv('garbage_classification/results/predictions.csv')
+    climate_data = pd.read_csv('climate_analysis/results/preprocessed_climate_data.csv')
+    pollution_data = pd.read_csv('pollution_analysis/results/preprocessed_pollution_data.csv')
 # Debug prints to verify column names
     print("Columns in garbage_data:", garbage_data.columns)
     print("Columns in climate_data:", climate_data.columns)
@@ -60,8 +60,8 @@ if __name__ == "__main__":
     merged_data = merge_datasets(climate_data, pollution_data)
     
     # Save the merged data for reference
-    os.makedirs('../results', exist_ok=True)
-    merged_data.to_csv('../results/merged_climate_pollution_data.csv', index=False)
+    os.makedirs('combined_analysis/results', exist_ok=True)
+    merged_data.to_csv('combined_analysis/results/merged_climate_pollution_data.csv', index=False)
     print("Merged climate and pollution data saved as 'merged_climate_pollution_data.csv'")
     
     # Analyze the merged climate and pollution data

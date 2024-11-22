@@ -4,7 +4,7 @@ import os
 def preprocess_pollution_data():
     # Load pollution data
     print("Loading pollution data...")
-    df = pd.read_csv('../dataset/pollution_data.csv')
+    df = pd.read_csv('pollution_analysis/dataset/pollution_data.csv')
     print("Data loaded successfully.")
     
     # Verify columns
@@ -44,7 +44,7 @@ def preprocess_pollution_data():
     df_filtered['PlasticWastePercent'] = df_filtered['PlasticWastePercent'] / 100.0
 
     # Save preprocessed data
-    output_path = '../results/preprocessed_pollution_data.csv'
+    output_path = 'pollution_analysis/results/preprocessed_pollution_data.csv'
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     df_filtered.to_csv(output_path, index=False)
     print(f"Data preprocessed and saved to: {output_path}")
