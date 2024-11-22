@@ -96,15 +96,31 @@ Sanjana Koujalgi (H00462014)
 
 >> Running the Application
 
- > Waste Classification
-   1. Run Preprocessing_and_train.py to train the CNN model.
-   2. Execute visualization.py to generate visual charts.
-   3. Start the local server with app.py to classify waste images.
+> Our Project have 3 Datasets each dataset is plased in the repective folders.
+
+ > Garbage Classification
+   1. Run Preprocess_garbage_data.py to train the CNN model.
+   2. Run train_garbage_model.py to train the model after preprocessing.
+   3. Run analyze_garbage_data.py by taking the results from trained model
+   4. Results will be stored in the ressults folder
 
  > Climate Data Analysis
    1. Run preprocess_climate_data.py to prepare data.
    2. Execute analyze_climate_data.py to visualize results.
+   3. Results will be stored in the ressults folder
+ 
+ > Pollution Data Analysis
+   1. Run preprocess_pollution_data.py to process the data.
+   2. Execute analyze_pollution_data.py to get the results in .csv format
 
+ > Combined Analysis
+   1. Run combined_analysis.py collecting all the results from other analysis to get merged climate pollution data.
+   2. Execute waste_prediction.py to get visual chart of actual vs predicted organic waste.
+  
+ > Additionals
+   1. Run Preprocessing_and_train.py to train the CNN model.
+   2. Execute visualization.py to generate visual charts.
+   3. Start the local server with app.py to classify waste images.
 
 >> Weekly Updates
 
