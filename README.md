@@ -6,11 +6,11 @@
 Machine Learning for Environmental Sustainability: Waste Classification and Climate Prediction
 
 > Group Members:
-Adarsh Kumar (H00462142)
-Gagan Lokanath Shetty (H00461958)
-Kiran Narayana (H00461871)
-Neha Giliyar Nagaraj (H00461957)
-Sanjana Koujalgi (H00462014)
+ * Adarsh Kumar (H00462142)
+ * Gagan Lokanath Shetty (H00461958)
+ * Kiran Narayana (H00461871)
+ * Neha Giliyar Nagaraj (H00461957)
+ * Sanjana Koujalgi (H00462014)
 
 >> Research Objectives
 
