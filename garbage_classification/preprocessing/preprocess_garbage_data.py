@@ -27,8 +27,8 @@ def preprocess_garbage_data():
     )
     
     # Save class indices for reference
-    labels_path = '../results/classification_labels.csv'
     os.makedirs('../results', exist_ok=True)
+    labels_path = '../results/classification_labels.csv'
     with open(labels_path, 'w') as f:
         for label, index in train_data.class_indices.items():
             f.write(f"{label},{index}\n")

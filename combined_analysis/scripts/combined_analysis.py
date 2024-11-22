@@ -2,9 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 
 def combined_analysis():
-    garbage_df = pd.read_csv('/Users/kirangowda/Desktop/F21DL_coursework/garbage_classification/results/classification_labels.csv')
-    climate_df = pd.read_csv('/Users/kirangowda/Desktop/F21DL_coursework/climate_analysis/results/preprocessed_climate_data.csv')
-    pollution_df = pd.read_csv('/Users/kirangowda/Desktop/F21DL_coursework/pollution_analysis/results/preprocessed_pollution_data.csv')
+    garbage_df = pd.read_csv('../../garbage_classification/results/classification_labels.csv')
+    climate_df = pd.read_csv('../../climate_analysis/results/preprocessed_climate_data.csv')
+    pollution_df = pd.read_csv('../../pollution_analysis/results/preprocessed_pollution_data.csv')
 
    # Merge climate and pollution data on country names
     merged_df = pollution_df.merge(climate_df, left_on="country_name", right_on="Country", how="inner")

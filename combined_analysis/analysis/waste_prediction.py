@@ -1,5 +1,4 @@
 # waste_prediction.py
-
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -10,7 +9,7 @@ import matplotlib.pyplot as plt
 # Load merged data
 def load_data():
     # Load the merged data from CSV (ensure this file exists in the specified path)
-    data = pd.read_csv('/Users/kirangowda/Desktop/F21DL_coursework/combined_analysis/results/merged_climate_pollution_data.csv')
+    data = pd.read_csv('../results/merged_climate_pollution_data.csv')
     return data
 
 # Preprocess data: select relevant features and target, handle missing values
