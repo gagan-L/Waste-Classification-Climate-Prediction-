@@ -146,4 +146,20 @@ The line plot displays the climate trends for selected countries using normalize
 The results folder contains the processed and analyzed data in CSV format and any saved visualizations.
 
 =========================================================
+**Pollution Dataset Instructions**
+Dataset Location:
+Place the dataset folder under the pollution_analysis directory.
 
+Preprocess Pollution Data:
+Run preprocess_pollution_data.py to:
+
+Filter and clean relevant columns (e.g., waste generation, composition percentages).
+Normalize TotalWasteGenerated and convert waste composition percentages to decimals.
+Save the preprocessed data as preprocessed_pollution_data.csv in the results folder.
+Analyze Pollution Data:
+Run analyze_pollution_data.py to:
+
+Generate a bar plot for the top 10 countries by total waste generated.
+Analyze and visualize waste composition for a selected country.
+Results Location:
+Preprocessed data and visualizations are stored in the results folder inside pollution_analysis.
