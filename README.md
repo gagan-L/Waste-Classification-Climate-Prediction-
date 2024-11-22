@@ -105,21 +105,45 @@ README.md: Project overview and data pipeline description.
 
 =====================================================
 
-Garbage Dataset
+**Garbage Dataset Instructions:**
+Dataset Location:
+Place the dataset folder under the garbage_classification directory.
 
-1. Uploaded the dataset folder under garbage classification
-2. Run preprocess_garbage_data.py to process and train the data first
-3. Run analyze_garbage_data.py to analyse the proccessed and trained data.
-4. Please check model folder for the trained CNN model.
-5. Once this is run please check the results folder for classification of garbage based on category.
+Preprocess and Train the Data:
+Run preprocess_garbage_data.py to preprocess the images and train the model:
+
+This will normalize the image data, apply data augmentation, and save the trained CNN model.
+Analyze Processed and Trained Data:
+Run analyze_garbage_data.py to analyze the results of the processed and trained data:
+
+This script uses the trained model to classify garbage into categories.
+Model and Results Location:
+
+The trained CNN model is saved in the model folder.
+The classification results, including predictions, can be found in the results folder.
 
 ======================================================
 
-Climate Dataset
+**Climate Dataset Instructions:**
+Dataset Location:
+Place the dataset folder under the climate_analysis directory.
 
-1. Uploaded the dataset folder under climate analysis
-2. Run preprocess_climate_data.py to process the data based on avergae temperature
-3. Run analyze_climate_dat.py to analyse the processed data 
-4. once run please check the results folder for both processed as well as analysed data in csv.
-5. As updated now once we run the analysis_climate.py we see a visual representation of plot using climate average temperature of countries we mention. 
-6. Analysed data will be gereated in a csv file in rsults folder inside climate_analysis.
+Preprocess Climate Data:
+Run preprocess_climate_data.py to process the dataset:
+
+This script calculates the yearly average temperature for each country and normalizes the values.
+The preprocessed data will be saved as a CSV file in the results folder inside climate_analysis.
+Analyze Processed Data:
+Run analyze_climate_data.py to analyze the processed data:
+
+This script generates a visual representation of temperature trends for selected countries.
+The analysis results will include:
+A CSV file of analyzed data saved in the results folder.
+A line plot visualizing the normalized average temperature trends for specified countries.
+Visualization and Output:
+
+The line plot displays the climate trends for selected countries using normalized average temperatures.
+The results folder contains the processed and analyzed data in CSV format and any saved visualizations.
+
+=========================================================
+
