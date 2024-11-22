@@ -248,9 +248,9 @@ Cluster	Characteristics	Example Countries
 1	High PlasticWastePercent	USA, Australia
 Silhouette Score: 0.74
 
-**R4. Baseline Training and Evaluation Experiments
+**R4. Baseline Training and Evaluation Experiments**
 Three machine learning algorithms—Decision Trees, k-Nearest Neighbours (k-NN), and Linear Regression—were used. Regression was employed for predicting OrganicWastePercent, and classification models were applied to the garbage dataset. The decision tree's feature importance provided practical applications in waste decomposition prediction.
-Repository Location: Baseline Models
+Repository Location: https://github.com/gagan-L/Waste-Classification-Climate-Prediction-/blob/main/pollution_analysis/analysis/analyze_pollution_data.py
 Model Inputs: AverageTemperature, PlasticWastePercent, GlassWastePercent.
 Model Outputs: OrganicWastePercent (regression), garbage categories (classification).
 Results Table:
@@ -260,9 +260,9 @@ Linear Regression	R² (Regression)	0.73
 k-NN Classifier	Accuracy	88%
 Visualization: Scatter plots for regression predictions and confusion matrices for classification.
 
-**R5. Neural Networks
+**R5. Neural Networks**
 A Convolutional Neural Network (CNN) was trained on the garbage dataset for multi-class classification, achieving 90% accuracy. A Multi-Layer Perceptron (MLP) was applied to the combined dataset for regression tasks, predicting OrganicWastePercent with improved accuracy. Performance was compared to baseline models.
-Repository Location: Neural Network Models
+Repository Location: https://github.com/gagan-L/Waste-Classification-Climate-Prediction-/blob/main/pollution_analysis/analysis/analyze_pollution_data.py
 Model Inputs: Image data for CNN, normalized features for MLP.
 Model Outputs: Predicted garbage categories (CNN) and OrganicWastePercent (MLP).
 Results Table:
