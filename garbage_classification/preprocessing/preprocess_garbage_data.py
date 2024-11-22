@@ -57,8 +57,8 @@ def preprocess_garbage_data():
     Returns:
         DirectoryIterator: The augmented training data.
     """
-    dataset_dir = os.path.abspath("../dataset")
-    labels_path = os.path.abspath("../results/classification_labels.csv")
+    dataset_dir = os.path.abspath("garbage_classification/dataset")
+    labels_path = os.path.abspath("garbage_classification/results/classification_labels.csv")
 
     train_data = load_training_data(dataset_dir)
     save_class_labels(train_data.class_indices, labels_path)

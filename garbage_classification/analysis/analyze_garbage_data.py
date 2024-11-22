@@ -73,9 +73,9 @@ def main():
     """
     Main function to load the model, predict classes, and save predictions.
     """
-    model_path = os.path.abspath("../results/garbage_classification_model.h5")
-    data_dir = os.path.abspath("../dataset")
-    output_csv_path = os.path.abspath("../results/predictions.csv")
+    model_path = os.path.abspath("garbage_classification/results/garbage_classification_model.h5")
+    data_dir = os.path.abspath("garbage_classification/dataset")
+    output_csv_path = os.path.abspath("garbage_classification/results/predictions.csv")
 
     # Load model and data generator
     model = load_model(model_path)
