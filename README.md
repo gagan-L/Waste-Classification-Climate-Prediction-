@@ -163,3 +163,20 @@ Generate a bar plot for the top 10 countries by total waste generated.
 Analyze and visualize waste composition for a selected country.
 Results Location:
 Preprocessed data and visualizations are stored in the results folder inside pollution_analysis.
+
+=========================================================
+**Combined Analysis**
+Saving Merged Data for Reference:
+
+The merged climate and pollution dataset is saved as merged_climate_pollution_data.csv in the combined_analysis/results/ folder to ensure easy access and reproducibility.
+
+Analysis of Merged Data:
+
+The merged dataset is analyzed to explore correlations between variables like average temperature, total waste generated, and waste composition (organic, plastic, glass). A correlation matrix is computed and visualized using a heatmap to highlight variable relationships.
+
+Steps:
+
+Load climate and pollution datasets.
+Merge datasets by country name to create a combined dataset.
+Save the merged dataset in combined_analysis/results/.
+Compute and visualize a correlation matrix to analyze variable dependencies.
