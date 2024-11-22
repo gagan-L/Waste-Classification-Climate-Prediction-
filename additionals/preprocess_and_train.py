@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 
-dataset_path = './dataset/'
+dataset_path = 'garbage_classification/dataset'
 
 img_size = (128, 128)
 batch_size = 32

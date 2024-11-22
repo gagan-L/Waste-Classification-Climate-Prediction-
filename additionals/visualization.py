@@ -11,7 +11,7 @@ model = tf.keras.models.load_model('garbage_classification_model.h5')
 # Preprocess the validation data
 datagen = ImageDataGenerator(rescale=1./255, validation_split=0.2)
 val_data = datagen.flow_from_directory(
-    './dataset/',
+    'garbage_classification/dataset',
     target_size=(128, 128),
     batch_size=32,
     class_mode='categorical',

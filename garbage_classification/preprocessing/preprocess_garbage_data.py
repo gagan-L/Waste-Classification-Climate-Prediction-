@@ -3,7 +3,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 def preprocess_garbage_data():
     # Directory where the images are stored
-    dataset_dir = '../dataset'
+    dataset_dir = 'garbage_classification/dataset'
     
     # Set up data generator for image augmentation
     datagen = ImageDataGenerator(
@@ -27,8 +27,8 @@ def preprocess_garbage_data():
     )
     
     # Save class indices for reference
-    os.makedirs('../results', exist_ok=True)
-    labels_path = '../results/classification_labels.csv'
+    os.makedirs('garbage_classification/results', exist_ok=True)
+    labels_path = 'garbage_classification/results/classification_labels.csv'
     with open(labels_path, 'w') as f:
         for label, index in train_data.class_indices.items():
             f.write(f"{label},{index}\n")

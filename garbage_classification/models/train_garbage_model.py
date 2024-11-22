@@ -27,14 +27,14 @@ def train_model(train_data):
     model.fit(train_data, epochs=10, steps_per_epoch=train_data.samples // train_data.batch_size)
     
     # Save the model
-    model.save('../results/garbage_classification_model.h5')
-    print("Model saved to ../results/garbage_classification_model.h5")
+    model.save('garbage_classification/results/garbage_classification_model.h5')
+    print("Model saved to garbage_classification/results/garbage_classification_model.h5")
 
 if __name__ == "__main__":
     # Load the preprocessed data
     datagen = ImageDataGenerator(rescale=1./255)
     train_data = datagen.flow_from_directory(
-        '../dataset',
+        'garbage_classification/dataset',
         target_size=(128, 128),
         batch_size=32,
         class_mode='categorical',
