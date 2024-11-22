@@ -230,3 +230,26 @@ Load climate and pollution datasets.
 Merge datasets by country name to create a combined dataset.
 Save the merged dataset in combined_analysis/results/.
 Compute and visualize a correlation matrix to analyze variable dependencies.
+
+
+==========================================================
+
+**Requirement Descriptions (R2–R5)** 
+
+**R2. Data Analysis and Exploration**
+Comprehensive preprocessing and cleaning were conducted for all datasets (garbage, climate, and pollution) to ensure data quality. Exploratory Data Analysis (EDA) revealed patterns such as the effect of temperature on organic waste decomposition and the classification of garbage into 12 categories. Feature selection identified key inputs like AverageTemperature, PlasticWastePercent, and GlassWastePercent.
+Repository Location: https://github.com/gagan-L/Waste-Classification-Climate-Prediction-/blob/main/pollution_analysis/analysis/analyze_pollution_data.py
+Model Inputs: AverageTemperature, PlasticWastePercent, GlassWastePercent.
+Model Outputs: OrganicWastePercent (prediction) and garbage categories (classification).
+Visualization: Included heatmaps for correlations, scatter plots, and bar charts.
+
+**R3. Clustering**
+K-means clustering was applied to analyze similarities across countries in terms of waste management. Climate and pollution datasets were clustered to identify countries with similar organic waste levels and temperature profiles. Performance was evaluated using silhouette scores.
+Repository Location: Clustering Code
+Model Inputs: AverageTemperature, PlasticWastePercent, OrganicWastePercent.
+Model Outputs: Clusters of countries with similar waste patterns.
+Results Table: https://github.com/gagan-L/Waste-Classification-Climate-Prediction-/blob/main/climate_analysis/analysis/analyze_climate_data.py
+Cluster	Characteristics	Example Countries
+0	High OrganicWastePercent	Bangladesh, India
+1	High PlasticWastePercent	USA, Australia
+Silhouette Score: 0.74
